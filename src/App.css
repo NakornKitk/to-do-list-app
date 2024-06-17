@@ -97,19 +97,19 @@ form > button {
 
 
 .taskbtn > button {
-    margin: 3%;
-
     border-radius: 10px;
     border: 1px solid lightgray;
 }
 
 
 .finish {
+    margin-right: 2%;
     color:green;
 }
 
 
 .delete {
+    margin-left: 2%;
     color: red;
 }
 
@@ -134,4 +134,27 @@ form > button {
 
 button:hover, span:hover{
     cursor: pointer;
+}
+
+
+.edit-form {
+    justify-content: flex-start;
+}
+
+
+.edit-form input {
+    border-radius:10px 0px 0px 10px;
+    border-right: none;
+}
+
+
+.edit-form > button {
+    border-radius:0px 10px 10px 0px;
+    border-left: none;
+    color: black;
+}
+
+
+div > p {
+    color: black;
 }

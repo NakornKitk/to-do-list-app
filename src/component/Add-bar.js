@@ -18,7 +18,7 @@ function AddTaskBar ({onCreate}) {
     return (
         <div className="addbar">
             <form onSubmit={handleFormSubmit}>
-                <input value={task} onChange={handleOnChange} placeholder='Please insert task here...'></input>
+                <input value={task} onChange={handleOnChange} maxlength="23" placeholder='Please insert task here...'></input>
                 <button>New Task</button>
             </form>
         </div>

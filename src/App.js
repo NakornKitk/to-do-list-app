@@ -29,12 +29,32 @@ function App() {
     setAllTask(updateTask)
   }
 
+
+  const editTaskbyId = (id, newTask) => {
+
+
+    const updateTask = AllTask.map((task) => {
+      if (newTask === undefined) {
+        alert("Please insert task name")
+      }
+
+      if (task.id===id) {
+        return {...AllTask, task: newTask}
+      }
+
+      return task;
+    })
+
+    setAllTask(updateTask)
+  }
+
   return (
     <div>
         <h1>Things to do:</h1>
         <AddTaskBar onCreate={createTask}/>
         <hr></hr>
-        <TaskList className="tasklist" tasks={AllTask} onDelete={deleteTaskbyId}/>
+        <p>Click on the task name to edit.</p>
+        <TaskList className="tasklist" tasks={AllTask} onDelete={deleteTaskbyId} onEdit={editTaskbyId}/>
     </div>
   )
 }
