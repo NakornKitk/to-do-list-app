@@ -31,21 +31,19 @@ function App() {
 
 
   const editTaskbyId = (id, newTask) => {
+    if (newTask === undefined) {
+      alert("Please insert task name")
+    } else {
+      const updateTask = AllTask.map((task) => {
+        if (task.id===id) {
+            return {...AllTask, task: newTask}
+        }
+        return task;
+      })
+      
+      setAllTask(updateTask)
+    }
 
-
-    const updateTask = AllTask.map((task) => {
-      if (newTask === undefined) {
-        alert("Please insert task name")
-      }
-
-      if (task.id===id) {
-        return {...AllTask, task: newTask}
-      }
-
-      return task;
-    })
-
-    setAllTask(updateTask)
   }
 
   return (
