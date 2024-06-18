@@ -5,16 +5,16 @@ import AddTaskBar from './component/Add-bar'
 import {useState} from 'react'
 
 function App() {
-  const [AllTask, setAllTask] = useState([])
+  const [allTaskArr, setAllTask] = useState([])
 
   const createTask = (task) => {
     if (task === "") {
       alert("Please insert task name")
     } else {
-      const updateTask = [...AllTask,
+      const updateTask = [...allTaskArr,
         {
           id: Math.round(Math.random()*9999),
-          task
+          taskName: task
         }
       ]
       setAllTask(updateTask)
@@ -22,7 +22,7 @@ function App() {
   }
 
   const deleteTaskbyId = (id) => {
-    const updateTask = AllTask.filter((task) => {
+    const updateTask = allTaskArr.filter((task) => {
       return task.id !== id;
     })
 
@@ -31,19 +31,18 @@ function App() {
 
 
   const editTaskbyId = (id, newTask) => {
-    if (newTask === undefined) {
-      alert("Please insert task name")
+    if (newTask === "") {
+      alert("Please insert taskname")
     } else {
-      const updateTask = AllTask.map((task) => {
+      const updateTask = allTaskArr.map((task) => {
         if (task.id===id) {
-            return {...AllTask, task: newTask}
-        }
-        return task;
-      })
-      
+            return  {...task, taskName: newTask}
+          }
+          return task;
+        })
+
       setAllTask(updateTask)
     }
-
   }
 
   return (
@@ -52,7 +51,7 @@ function App() {
         <AddTaskBar onCreate={createTask}/>
         <hr></hr>
         <p>Click on the task name to edit.</p>
-        <TaskList className="tasklist" tasks={AllTask} onDelete={deleteTaskbyId} onEdit={editTaskbyId}/>
+        <TaskList className="tasklist" allTaskArr={allTaskArr} onDelete={deleteTaskbyId} onEdit={editTaskbyId}/>
     </div>
   )
 }

@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import TaskEdit from './Edit-bar';
 
-function TaskShow ({taskName,onDelete, onEdit}) {
+function TaskShow ({task ,onDelete, onEdit}) {
     const deleteBtn = () => {
-        onDelete(taskName.id)
+        onDelete(task.id)
     }
 
     const [isActive, setIsActive] = useState(false);
@@ -19,20 +19,21 @@ function TaskShow ({taskName,onDelete, onEdit}) {
         setIsEdit(!isEdit)
     }
 
-    const handleEditClick = (id, title) => {
-        onEdit(id, title)
+    const handleEditClick = (id, newTask) => {
+        onEdit(id, newTask)
         setIsEdit(false)
     }
 
+
     if (isEdit) {
-        taskName.task = <TaskEdit onSubmit={handleEditClick} task={taskName} />
+        task.taskName = <TaskEdit onSubmit={handleEditClick} task={task}/>
     }
 
 
     return (
         <div className={isActive ? 'active-tg' : 'taskshow'}>
             <div>
-                <span onClick={editBtn}>{taskName.task}</span>
+                <span onClick={editBtn}>{task.taskName}</span>
             </div>
             <div className="taskbtn">
                 <button onClick={toggleClass} className="finish">

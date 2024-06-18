@@ -1,7 +1,6 @@
 import {useState} from 'react'
 
 function AddTaskBar ({onCreate}) {
-
     const [task, setTask] = useState('')
 
     const handleFormSubmit = (event) => {

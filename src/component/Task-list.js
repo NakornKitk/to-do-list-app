@@ -1,9 +1,9 @@
 import TaskShow from './Task-show'
 
-function TaskList ({tasks, onDelete, onEdit}) {
+function TaskList ({allTaskArr, onDelete, onEdit}) {
     
-    const AllTask = tasks.map((task) => {
-        return <TaskShow taskName={task} key={task.id} onDelete={onDelete} onEdit={onEdit}/>
+    const AllTask = allTaskArr.map((task) => {
+        return <TaskShow task={task} key={task.id} onDelete={onDelete} onEdit={onEdit}/>
     })
     
     return <div className = "tasklist">{AllTask}</div>
