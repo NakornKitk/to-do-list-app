@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/to-do-list-app/static/css/main.443abf36.css",
-    "main.js": "/to-do-list-app/static/js/main.b351fed5.js",
+    "main.css": "/to-do-list-app/static/css/main.14af5413.css",
+    "main.js": "/to-do-list-app/static/js/main.f83d5535.js",
+    "static/media/StockCake-Colorful.jpg": "/to-do-list-app/static/media/StockCake-Colorful.3e9ec41f4fbab20ee2fb.jpg",
+    "static/media/calendar-checkmark-icon.svg": "/to-do-list-app/static/media/calendar-checkmark-icon.aac8352bb8759c24108992ec72d20d07.svg",
     "index.html": "/to-do-list-app/index.html",
-    "main.443abf36.css.map": "/to-do-list-app/static/css/main.443abf36.css.map",
-    "main.b351fed5.js.map": "/to-do-list-app/static/js/main.b351fed5.js.map"
+    "main.14af5413.css.map": "/to-do-list-app/static/css/main.14af5413.css.map",
+    "main.f83d5535.js.map": "/to-do-list-app/static/js/main.f83d5535.js.map"
   },
   "entrypoints": [
-    "static/css/main.443abf36.css",
-    "static/js/main.b351fed5.js"
+    "static/css/main.14af5413.css",
+    "static/js/main.f83d5535.js"
   ]
 }
