@@ -1,12 +1,26 @@
 import {useState} from 'react'
+import useStore from '../store/store';
 
-function AddTaskBar ({onCreate}) {
+function AddTaskBar () {
+    const {createTaskstr} = useStore();
     const [task, setTask] = useState('')
+
+    const createTask = (task) => {
+        if (task === "") {
+          alert("Please insert task name")
+        } else {
+          const newTask = {
+              id: Math.round(Math.random()*9999),
+              taskName: task
+            }
+          createTaskstr(newTask)
+        }
+      }
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
 
-        onCreate(task)
+        createTask(task)
         setTask('')
     }
 

@@ -1,9 +1,13 @@
 import {useState} from 'react';
 import TaskEdit from './Edit-bar';
+import useStore from '../store/store';
 
-function TaskShow ({task ,onDelete, onEdit}) {
+function TaskShow ({task}) {
+
+    const { deleteTaskstr} = useStore();
+
     const deleteBtn = () => {
-        onDelete(task.id)
+        deleteTaskstr(task.id)
     }
 
     const [isActive, setIsActive] = useState(false);
@@ -19,8 +23,7 @@ function TaskShow ({task ,onDelete, onEdit}) {
         setIsEdit(!isEdit)
     }
 
-    const handleEditClick = (id, newTask) => {
-        onEdit(id, newTask)
+    const handleEditClick = () => {
         setIsEdit(false)
     }
 

@@ -1,7 +1,18 @@
 import {useState} from 'react'
+import useStore from '../store/store';
 
-function TaskEdit ({task, onSubmit}) {
+function TaskEdit ({task,onSubmit}) {
+    const {updateTaskstr} = useStore();
     const [newTaskName, setnewTaskName] = useState("");
+
+
+    const editTaskbyId = (id, newTask) => {
+        if (newTask === "") {
+          alert("Please insert taskname")
+        } else {
+          updateTaskstr(id,newTask)
+        }
+      }
 
     const handleChange = (event) =>{
         setnewTaskName(event.target.value)
@@ -9,7 +20,8 @@ function TaskEdit ({task, onSubmit}) {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        onSubmit(task.id, newTaskName)
+        editTaskbyId(task.id, newTaskName)
+        onSubmit()
     }
 
     return(

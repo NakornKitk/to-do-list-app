@@ -1,9 +1,11 @@
 import TaskShow from './Task-show'
+import useStore from '../store/store';
 
-function TaskList ({allTaskArr, onDelete, onEdit}) {
+function TaskList () {
+    const { allTaskArr } = useStore();
     
     const AllTask = allTaskArr.map((task) => {
-        return <TaskShow task={task} key={task.id} onDelete={onDelete} onEdit={onEdit}/>
+        return <TaskShow task={task} key={task.id}/>
     })
     
     return <div className = "tasklist">{AllTask}</div>
