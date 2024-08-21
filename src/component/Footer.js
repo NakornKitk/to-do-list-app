@@ -7,8 +7,8 @@ function Footer() {
     <div className="footer">
         <p>Contact Me</p>
         <div>
-            <a href="https://github.com/NakornKitk?tab=repositories"><img className='icon' src={gitIcon} alt="" /></a>
-            <a href="https://www.linkedin.com/in/nakorn-kitkancharoensin/"><img className='icon' src={LinkedinIcon} alt=""/></a>
+            <a href="https://github.com/NakornKitk?tab=repositories"><img className='icon2' src={gitIcon} alt="" /></a>
+            <a href="https://www.linkedin.com/in/nakorn-kitkancharoensin/"><img className='icon2' src={LinkedinIcon} alt=""/></a>
         </div>
     </div>
   )

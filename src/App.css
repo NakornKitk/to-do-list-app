@@ -1,219 +1,230 @@
 * {
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-    margin: 0px;
+  margin: 0px;
 
-    min-height: 100vh;
+  min-height: 100vh;
 
-    background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)),url(./images/StockCake-Colorful.jpg);
-    background-size: cover;
-    background-attachment: fixed;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url(./images/StockCake-Colorful.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 
-    justify-content: center;
-    
+  justify-content: center;
 }
 
 .taskapp {
-    border: solid 1px lightgray;
-    border-radius: 20px;
-    padding: 0px 15px;
-    background-color: rgba(255, 255, 255, 0.7);
+  border: solid 1px lightgray;
+  border-radius: 20px;
+  padding: 0px 15px;
+  background-color: rgba(255, 255, 255, 0.7);
 
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-    margin: 30px auto 80px;
+  margin: 30px auto 80px;
 
-    width: 350px;
+  width: 350px;
 }
 
-.taskapp>p{
-    font-weight: bold;
+.taskapp > p {
+  font-weight: bold;
 }
 
 .header {
-    display: flex;
+  display: flex;
 }
 
-h1{
-    color: black;
-    margin-right: 10px;
+h1 {
+  color: black;
+  margin-right: 10px;
 }
 
 hr {
-    border-color: orange;
+  border-color: orange;
 }
 
 .addbar {
-    padding: 10px 0px;
+  padding: 10px 0px;
 }
 
 form {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    height: 30px;
-
+  height: 30px;
 }
 
 form > input {
-    width: 60%;
+  width: 60%;
 
-    border-radius: 10px;
-    border: 1px solid lightgray;
+  border-radius: 10px;
+  border: 1px solid lightgray;
 }
 
 form > button {
-    width: 35%;
+  width: 35%;
 
-    border-radius: 10px;
-    border: 1px solid lightgray;
+  border-radius: 10px;
+  border: 1px solid lightgray;
 }
 
 .tasklist {
-    padding: 0px;
+  padding: 0px;
 }
 
 .taskshow {
-    display:flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    padding: 0px 2%;
-    margin: 15px 0px;
+  padding: 0px 2%;
+  margin: 15px 0px;
 
-    border: 1px solid lightgray;
-    border-radius: 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
 
-    background-color: white;
+  background-color: white;
 
-    font-weight: bold;
+  font-weight: bold;
 }
 
+.taskshow > div,
+.active-tg > div {
+  padding: 1%;
 
-.taskshow > div, .active-tg > div {
-    padding: 1%;
+  display: flex;
+  align-items: center;
 
-    display: flex;
-    align-items: center;
-
-    max-width: 70%;;
+  max-width: 70%;
 }
-
 
 .active-tg > div {
-    font-weight: auto;
+  font-weight: auto;
 }
-
-
 
 .taskbtn {
-    display: flex;
+  display: flex;
 }
 
-
 .taskbtn > button {
-    border-radius: 10px;
-    border: 1px solid lightgray;
+  border-radius: 10px;
+  border: 1px solid lightgray;
 }
 
 button:hover {
-    box-shadow: 0 0 0 1.5px orange;
+  box-shadow: 0 0 0 1.5px orange;
 }
-
 
 .finish {
-    margin-right: 2%;
-    color:green;
+  margin-right: 2%;
+  color: green;
 }
-
 
 .delete {
-    margin-left: 2%;
-    color: red;
+  margin-left: 2%;
+  color: red;
 }
 
+.active-tg {
+  display: flex;
+  justify-content: space-between;
 
+  padding: 0px 2%;
+  margin: 15px 0px;
 
-.active-tg{
-    display:flex;
-    justify-content: space-between;
+  border: 1px solid rgb(95, 91, 91);
+  border-radius: 10px;
 
-    padding: 0px 2%;
-    margin: 15px 0px;
+  background-color: transparent;
+  text-decoration: line-through;
 
-    border: 1px solid rgb(95, 91, 91);
-    border-radius: 10px;
-
-    background-color: transparent;
-    text-decoration: line-through;
-
-    color: rgb(95, 91, 91);
+  color: rgb(95, 91, 91);
 }
 
-
-button:hover, span:hover{
-    cursor: pointer;
+button:hover,
+span:hover {
+  cursor: pointer;
 }
-
 
 .edit-form {
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
-
 
 .edit-form input {
-    border-radius:10px 0px 0px 10px;
-    border-right: none;
+  border-radius: 10px 0px 0px 10px;
+  border-right: none;
 }
-
 
 .edit-form > button {
-    border-radius:0px 10px 10px 0px;
-    border-left: none;
-    color: black;
+  border-radius: 0px 10px 10px 0px;
+  border-left: none;
+  color: black;
 }
-
 
 div > p {
-    color: black;
+  color: black;
 }
 
+.navbar,
+.footer {
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
 
-.navbar, .footer{
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px;
+  font-size: 20px;
+  font-weight: bolder;
 
-    font-size: 20px;
-    font-weight:bolder;
-
-    display: flex;
+  display: flex;
 }
 
-.navbar>p, .footer>p{
-    margin: auto 0px;
+.navbar > p,
+.footer > p {
+  margin: auto 0px;
 }
-
 
 .footer {
-    position:fixed;
-    width:100%;
-    bottom:0px;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
 
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
-.icon {
-    width: 30px;
-    margin-right: 10px;
-
-    transition: transform .2s;
+.icon,
+.icon2 {
+  width: 30px;
+  margin-right: 10px;
+  transition: transform 0.2s;
 }
 
+.icon2 {
+  margin-left: 10px;
+  margin-right: 0px;
+}
 
+.icon2:hover,
 .icon:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+@media (min-width: 640px) {
+  .navbar,
+  .footer {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar,
+  .footer {
+    padding-left: 175px;
+    padding-right: 175px;
+  }
 }
