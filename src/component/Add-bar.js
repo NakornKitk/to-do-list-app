@@ -29,10 +29,10 @@ function AddTaskBar () {
     }
 
     return (
-        <div className="addbar">
-            <form onSubmit={handleFormSubmit}>
-                <input value={task} onChange={handleOnChange} maxlength="23" placeholder='Please insert task here...'></input>
-                <button>New Task</button>
+        <div className="" Style="padding: 10px 0px">
+            <form className="d-flex justify-content-between" onSubmit={handleFormSubmit}>
+                <input className="w-100 border rounded me-2 p-2" value={task} onChange={handleOnChange} maxlength="23" placeholder='Please insert task here...'></input>
+                <button className="w-50 border rounded p-2">New Task</button>
             </form>
         </div>
     )

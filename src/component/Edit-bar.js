@@ -25,9 +25,9 @@ function TaskEdit ({task,onSubmit}) {
     }
 
     return(
-        <form onSubmit={handleSubmit} className="edit-form">
-            <input value={newTaskName} onChange={handleChange} maxlength="23"/>
-            <button><span className="material-symbols-outlined">edit</span></button>
+        <form onSubmit={handleSubmit} className="d-flex">
+            <input className="border border-secondary rl" value={newTaskName} onChange={handleChange} maxlength="23"/>
+            <button className="border border-secondary rr"><span className="material-symbols-outlined">edit</span></button>
         </form>
     )
 }

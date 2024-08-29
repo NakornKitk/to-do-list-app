@@ -8,7 +8,7 @@ function TaskList () {
         return <TaskShow task={task} key={task.id}/>
     })
     
-    return <div className = "tasklist">{AllTask}</div>
+    return <div className = "text-dark">{AllTask}</div>
     
 }
 

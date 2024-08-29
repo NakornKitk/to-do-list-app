@@ -34,15 +34,15 @@ function TaskShow ({task}) {
 
 
     return (
-        <div className={isActive ? 'active-tg' : 'taskshow'}>
-            <div>
+        <div className={isActive ? 'd-flex justify-content-between bg-transparent py-2 px-3 my-2 rounded border text-decoration-line-through' : 'd-flex justify-content-between bg-light py-2 px-3 my-2 rounded'}>
+            <div className = "my-auto">
                 <span onClick={editBtn}>{task.taskName}</span>
             </div>
-            <div className="taskbtn">
-                <button onClick={toggleClass} className="finish">
+            <div className="">
+                <button onClick={toggleClass} className="rounded text-success me-1">
                     <span className="material-symbols-outlined">check</span>
                 </button>
-                <button onClick={deleteBtn} className="delete">
+                <button onClick={deleteBtn} className="rounded text-danger">
                     <span className="material-symbols-outlined">delete_forever</span>
                 </button>
             </div>

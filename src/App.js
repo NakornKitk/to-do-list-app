@@ -12,15 +12,15 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className="taskapp">
-        <div className="header">
-          <h1>Things to do</h1>
+      <div className="bg-light p-2 text-white bg-opacity-75 rounded p-4 my-5 mx-auto shadow res-w">
+        <div className="d-flex">
+          <h1 className="text-dark me-2 pt-2">Things to do</h1>
           <img className="icon" src={icon} alt=""></img>
         </div>
         <AddTaskBar/>
-        <hr></hr>
-        <p>Click on the task name to edit.</p>
-        <TaskList className="tasklist"/>
+        <hr className="border border-info"></hr>
+        <p className="font-weight-bold text-dark">Click on the task name to edit.</p>
+        <TaskList />
       </div>
       <Footer />
     </>
