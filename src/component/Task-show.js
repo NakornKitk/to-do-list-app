@@ -1,54 +1,104 @@
-import {useState} from 'react';
-import TaskEdit from './Edit-bar';
-import useStore from '../store/store';
+import { useState } from "react";
+import TaskEdit from "./Edit-bar";
+import useStore from "../store/store";
 
-function TaskShow ({task}) {
+function TaskShow({ task }) {
+  const {deleteTaskstr, setDoneStatus, toggleEditbar, settoggleEditbar, setEditID } = useStore();
 
-    const { deleteTaskstr} = useStore();
+  const deleteBtn = () => {
+    deleteTaskstr(task.id);
+  };
 
-    const deleteBtn = () => {
-        deleteTaskstr(task.id)
+  const [isMore, setIsMore] = useState(false);
+
+  const handletoggleClass = () => {
+    setDoneStatus(task.id, task.taskDone);
+  };
+
+  const handleMore = () => {
+    setIsMore(!isMore);
+  };
+
+  function colorClass() {
+    if (task.piority == 3) {
+      return "text-danger";
+    } else if (task.piority == 2) {
+      return "text-warning";
+    } else {
+      return "text-success";
     }
-
-    const [isActive, setIsActive] = useState(false);
-
-    const toggleClass = () => {
-        setIsActive(!isActive); 
-    };
+  }
 
 
-    const [isEdit, setIsEdit] = useState(false);
+  function handleToggleEditbar() {
+    settoggleEditbar(toggleEditbar)
+    setEditID(task.id)
+  }
 
-    const editBtn = () => {
-        setIsEdit(!isEdit)
-    }
-
-    const handleEditClick = () => {
-        setIsEdit(false)
-    }
-
-
-    if (isEdit) {
-        task.taskName = <TaskEdit onSubmit={handleEditClick} task={task}/>
-    }
-
-
-    return (
-        <div className={isActive ? 'd-flex justify-content-between bg-transparent py-2 px-3 my-2 rounded border text-decoration-line-through' : 'd-flex justify-content-between bg-light py-2 px-3 my-2 rounded'}>
-            <div className = "my-auto">
-                <span onClick={editBtn}>{task.taskName}</span>
+  return (
+    <>
+      <div
+        className={
+          task.taskDone
+            ? "bg-transparent py-2 px-3 my-2 rounded border"
+            : "bg-light py-2 px-3 my-2 rounded"
+        }
+      >
+        <div className={"d-flex justify-content-between"}>
+          <div className=" w-75 my-2">
+            <div className="d-flex">
+              <span
+                className={`material-symbols-outlined my-auto me-3 ${colorClass()}`}
+              >
+                radio_button_checked
+              </span>
+              <div>
+                <p
+                  className={
+                    task.taskDone
+                      ? "my-0 fw-bold text-capitalize rounded text-decoration-line-through text-secondary bg-transparent"
+                      : "my-0 fw-bold text-capitalize rounded"
+                  }
+                >
+                  {task.taskName}
+                </p>
+                <p className="my-0 text-secondary">Date: {task.dueDate}</p>
+              </div>
             </div>
-            <div className="">
-                <button onClick={toggleClass} className="rounded text-success me-1">
-                    <span className="material-symbols-outlined">check</span>
-                </button>
-                <button onClick={deleteBtn} className="rounded text-danger">
-                    <span className="material-symbols-outlined">delete_forever</span>
-                </button>
-            </div>
+          </div>
+          <div className="my-3">
+            <span onClick={handleMore} class="material-symbols-outlined">
+              keyboard_arrow_down
+            </span>
+          </div>
         </div>
-    )
+        {isMore && (
+          <>
+            <div className="mt-1 mb-2 p-2 border rounded text-secondary text-break">
+              <span className="">{task.taskDes}</span>
+            </div>
+            {/* <p>piority: {task.piority}</p> */}
+            <div className="d-flex justify-content-end ">
+              <button
+                onClick={handletoggleClass}
+                className="rounded text-success me-1"
+              >
+                <span className="material-symbols-outlined">check</span>
+              </button>
+              <button onClick={deleteBtn} className="rounded text-danger me-1">
+                <span className="material-symbols-outlined">
+                  delete_forever
+                </span>
+              </button>
+              <button onClick={handleToggleEditbar} className="rounded">
+                <span className="material-symbols-outlined">edit</span>
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+    </>
+  );
 }
 
-
-export default TaskShow
+export default TaskShow;

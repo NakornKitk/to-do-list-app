@@ -2,9 +2,15 @@ import TaskShow from './Task-show'
 import useStore from '../store/store';
 
 function TaskList () {
-    const { allTaskArr } = useStore();
+    const { allTaskArr, searchTerm } = useStore();
     
-    const AllTask = allTaskArr.map((task) => {
+    const AllTask = allTaskArr.filter((item) => {
+        if (searchTerm == "") {
+          return item;
+        } else if (item.taskName.toLowerCase().includes(searchTerm.toLowerCase())) {
+          return item;
+        }
+      }).map((task) => {
         return <TaskShow task={task} key={task.id}/>
     })
     

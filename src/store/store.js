@@ -3,14 +3,14 @@ import {persist} from 'zustand/middleware'
 
 let store = (set) => ({
     allTaskArr: [],
-    createTaskstr: (newitem) => set((state) => ({
-        allTaskArr: [...state.allTaskArr, newitem]
+    createTaskstr: (newtask) => set((state) => ({
+        allTaskArr: [...state.allTaskArr, newtask]
     })),
 
-    updateTaskstr:(id, newTask) => set((state) => ({
+    updateTaskstr:(id, newTask, newDes, newPio, newDate) => set((state) => ({
         allTaskArr: state.allTaskArr.map((task) => {
             if (task.id===id) {
-                return  {id: task.id, taskName: newTask}
+                return  {id: task.id, taskName: newTask, taskDes: newDes,piority: newPio, dueDate: newDate}
               } else {
                 return task;
               }
@@ -23,7 +23,28 @@ let store = (set) => ({
               return item;
             }
           })
-    }))
+    })),
+
+    toggleAddbar: false,
+    settoggleAddbar: (toggle) => set({ toggleAddbar: !toggle }),
+
+    toggleEditar: false,
+    settoggleEditbar: (toggle) => set({ toggleEditbar: !toggle }),
+
+    setDoneStatus: (id, oldstatus) =>
+      set((state) => ({
+        allTaskArr: state.allTaskArr.map((item) =>
+          item.id === id ? { ...item, taskDone: !oldstatus } : item
+        ),
+      })),
+
+    searchTerm: "",
+    setSearchTerm: (event) => set({ searchTerm: event.target.value }),
+
+    editID: "",
+    setEditID: (id) => set({ editID: id }),
+
+
 })
 
 
