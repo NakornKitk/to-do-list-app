@@ -40,6 +40,14 @@
   width:100%
 }
 
+.min-vh-adjust {
+  min-height: calc(100vh - (100px));
+}
+
+.setheight {
+  height: 50px;
+}
+
 
 @media (min-width: 576px) {
   .res-w {

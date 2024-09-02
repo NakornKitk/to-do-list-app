@@ -67,7 +67,7 @@ function TaskShow({ task }) {
             </div>
           </div>
           <div className="my-3">
-            <span onClick={handleMore} class="material-symbols-outlined">
+            <span onClick={handleMore} class="material-symbols-outlined" role="button">
               keyboard_arrow_down
             </span>
           </div>
@@ -81,16 +81,16 @@ function TaskShow({ task }) {
             <div className="d-flex justify-content-end ">
               <button
                 onClick={handletoggleClass}
-                className="rounded text-success me-1"
+                className="rounded text-success pt-1 me-1"
               >
                 <span className="material-symbols-outlined">check</span>
               </button>
-              <button onClick={deleteBtn} className="rounded text-danger me-1">
+              <button onClick={deleteBtn} className="rounded text-danger pt-1 me-1">
                 <span className="material-symbols-outlined">
                   delete_forever
                 </span>
               </button>
-              <button onClick={handleToggleEditbar} className="rounded">
+              <button onClick={handleToggleEditbar} className="rounded pt-1">
                 <span className="material-symbols-outlined">edit</span>
               </button>
             </div>

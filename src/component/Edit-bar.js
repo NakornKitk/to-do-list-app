@@ -2,24 +2,23 @@ import { useState } from "react";
 import useStore from "../store/store";
 
 function TaskEdit() {
-  const { allTaskArr, updateTaskstr, toggleEditbar, settoggleEditbar, editID } =
-    useStore();
-  const [taskname, setTaskname] = useState();
-  const [des, setDes] = useState("");
-  const [pio, setPio] = useState("");
-  const [date, setDate] = useState("");
+  const { allTaskArr, updateTaskstr, toggleEditbar, settoggleEditbar, editID } = useStore();
 
-  const editTaskbyId = (id, newTask, newDes, newPio, newDate) => {
-    if (newTask === "") {
-      alert("Please insert taskname");
-    } else {
-      updateTaskstr(id, newTask, newDes, newPio, newDate);
-    }
-  };
+
+  let taskIdToFind = editID;
+  let task = allTaskArr.find(task => task.id === taskIdToFind);
+
+  const [taskname, setTaskname] = useState(task.taskName);
+  const [des, setDes] = useState(task.taskDes);
+  const [date, setDate] = useState(task.dueDate);
+
+
+  const [pio, setPio] = useState(task.piority);
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    editTaskbyId(editID, taskname, des, pio, date);
+    updateTaskstr(editID, taskname, des, pio, date);
 
     settoggleEditbar(toggleEditbar);
   };
@@ -45,20 +44,17 @@ function TaskEdit() {
   }
 
   return (
-    <div className="res-w mx-auto my-5 p-4 rounded bg-light bg-opacity-75">
+    <div className="res-w mx-auto p-4 rounded bg-light bg-opacity-75">
       <div className="d-flex justify-content-between">
-        <h1>Edit Task</h1>
-        <span class="material-symbols-outlined" onClick={handleToggleEditbar}>
+        <h1>Edit Task <span class="material-symbols-outlined h2">edit</span></h1>
+        <span class="material-symbols-outlined" role="button" onClick={handleToggleEditbar}>
           close
         </span>
       </div>
       <form className="" onSubmit={handleSubmit}>
         <div className="my-2">
           <label className="me-3">Please select piority</label>
-          <select onChange={handleOnClickPio} required>
-            <option value="" selected="selected">
-              Choose
-            </option>
+          <select onChange={handleOnClickPio} defaultValue={pio} required>
             <option value="3">High</option>
             <option value="2">Medium</option>
             <option value="1">Low</option>
