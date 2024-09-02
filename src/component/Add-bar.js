@@ -59,10 +59,16 @@ function AddTaskBar() {
 
   return (
     <div>
-          <div className="res-w mx-auto p-4 rounded bg-light bg-opacity-75">
+      <div className="res-w mx-auto p-4 rounded bg-light bg-opacity-75">
         <div className="d-flex justify-content-between">
-          <h1>New Task <span class="material-symbols-outlined h2">add_box</span></h1>
-          <span class="material-symbols-outlined" role="button"  onClick={handleToggleAddbar}>
+          <h1>
+            New Task <span class="material-symbols-outlined h2">add_box</span>
+          </h1>
+          <span
+            class="material-symbols-outlined"
+            role="button"
+            onClick={handleToggleAddbar}
+          >
             close
           </span>
         </div>
@@ -118,7 +124,6 @@ function AddTaskBar() {
         </form>
       </div>
     </div>
-    
   );
 }
 

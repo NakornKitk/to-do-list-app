@@ -2,19 +2,17 @@ import { useState } from "react";
 import useStore from "../store/store";
 
 function TaskEdit() {
-  const { allTaskArr, updateTaskstr, toggleEditbar, settoggleEditbar, editID } = useStore();
-
+  const { allTaskArr, updateTaskstr, toggleEditbar, settoggleEditbar, editID } =
+    useStore();
 
   let taskIdToFind = editID;
-  let task = allTaskArr.find(task => task.id === taskIdToFind);
+  let task = allTaskArr.find((task) => task.id === taskIdToFind);
 
   const [taskname, setTaskname] = useState(task.taskName);
   const [des, setDes] = useState(task.taskDes);
   const [date, setDate] = useState(task.dueDate);
 
-
   const [pio, setPio] = useState(task.piority);
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -46,8 +44,14 @@ function TaskEdit() {
   return (
     <div className="res-w mx-auto p-4 rounded bg-light bg-opacity-75">
       <div className="d-flex justify-content-between">
-        <h1>Edit Task <span class="material-symbols-outlined h2">edit</span></h1>
-        <span class="material-symbols-outlined" role="button" onClick={handleToggleEditbar}>
+        <h1>
+          Edit Task <span class="material-symbols-outlined h2">edit</span>
+        </h1>
+        <span
+          class="material-symbols-outlined"
+          role="button"
+          onClick={handleToggleEditbar}
+        >
           close
         </span>
       </div>

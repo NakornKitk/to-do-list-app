@@ -1,9 +1,14 @@
 import { useState } from "react";
-import TaskEdit from "./Edit-bar";
 import useStore from "../store/store";
 
 function TaskShow({ task }) {
-  const {deleteTaskstr, setDoneStatus, toggleEditbar, settoggleEditbar, setEditID } = useStore();
+  const {
+    deleteTaskstr,
+    setDoneStatus,
+    toggleEditbar,
+    settoggleEditbar,
+    setEditID,
+  } = useStore();
 
   const deleteBtn = () => {
     deleteTaskstr(task.id);
@@ -20,8 +25,10 @@ function TaskShow({ task }) {
   };
 
   function colorClass() {
+    // eslint-disable-next-line
     if (task.piority == 3) {
       return "text-danger";
+      // eslint-disable-next-line
     } else if (task.piority == 2) {
       return "text-warning";
     } else {
@@ -29,10 +36,9 @@ function TaskShow({ task }) {
     }
   }
 
-
   function handleToggleEditbar() {
-    settoggleEditbar(toggleEditbar)
-    setEditID(task.id)
+    settoggleEditbar(toggleEditbar);
+    setEditID(task.id);
   }
 
   return (
@@ -44,7 +50,7 @@ function TaskShow({ task }) {
             : "bg-light py-2 px-3 my-2 rounded"
         }
       >
-        <div className={"d-flex justify-content-between"}>
+        <div className="d-flex justify-content-between">
           <div className=" w-75 my-2">
             <div className="d-flex">
               <span
@@ -67,7 +73,11 @@ function TaskShow({ task }) {
             </div>
           </div>
           <div className="my-3">
-            <span onClick={handleMore} class="material-symbols-outlined" role="button">
+            <span
+              onClick={handleMore}
+              class="material-symbols-outlined"
+              role="button"
+            >
               keyboard_arrow_down
             </span>
           </div>
@@ -77,7 +87,6 @@ function TaskShow({ task }) {
             <div className="mt-1 mb-2 p-2 border rounded text-secondary text-break">
               <span className="">{task.taskDes}</span>
             </div>
-            {/* <p>piority: {task.piority}</p> */}
             <div className="d-flex justify-content-end ">
               <button
                 onClick={handletoggleClass}
@@ -85,7 +94,10 @@ function TaskShow({ task }) {
               >
                 <span className="material-symbols-outlined">check</span>
               </button>
-              <button onClick={deleteBtn} className="rounded text-danger pt-1 me-1">
+              <button
+                onClick={deleteBtn}
+                className="rounded text-danger pt-1 me-1"
+              >
                 <span className="material-symbols-outlined">
                   delete_forever
                 </span>

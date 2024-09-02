@@ -5,7 +5,7 @@ import AddTaskBar from "./component/Add-bar";
 import Footer from "./component/Footer";
 import NavBar from "./component/Nav-bar";
 import icon from "./images/calendar-checkmark-icon.svg";
-import React, { useState } from "react";
+import React from "react";
 import useStore from "./store/store";
 
 function App() {
@@ -36,25 +36,25 @@ function App() {
               onChange={(event) => setSearchTerm(event)}
             ></input>
           </form>
-          <hr className="border border-info"></hr>
-          <div className="font-weight-bold text-dark d-flex">
-            <p className="me-2">Piority:</p>
+          <hr className="border border-dark"></hr>
+          <div className="font-weight-bold text-dark d-flex align-items-center">
+            <p className="my-auto me-2">Piority:</p>
             <span className="material-symbols-outlined text-danger">
               radio_button_checked
             </span>
-            <p className="me-1">High</p>
+            <p className="my-auto me-1">High</p>
             <span className="material-symbols-outlined text-warning">
               radio_button_checked
             </span>
-            <p className="me-1">Medium</p>
+            <p className="my-auto me-1">Medium</p>
             <span className="material-symbols-outlined text-success">
               radio_button_checked
             </span>
-            <p className="me-1">Low</p>
+            <p className="my-auto me-1">Low</p>
           </div>
           <TaskList />
           <button
-            className="w-100 border rounded p-2"
+            className="w-100 border rounded p-2 mt-3"
             onClick={handleToggleAddbar}
           >
             New Task
@@ -65,7 +65,6 @@ function App() {
 
         {toggleEditbar && <TaskEdit />}
       </div>
-
 
       {/* <TaskEdit onSubmit={handleEditClick} task={task}/> */}
 
