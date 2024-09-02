@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/to-do-list-app/static/css/main.43d48545.css",
-    "main.js": "/to-do-list-app/static/js/main.6899cab8.js",
+    "main.js": "/to-do-list-app/static/js/main.8e517bdb.js",
     "static/media/StockCake-Colorful.jpg": "/to-do-list-app/static/media/StockCake-Colorful.3e9ec41f4fbab20ee2fb.jpg",
     "static/media/calendar-checkmark-icon.svg": "/to-do-list-app/static/media/calendar-checkmark-icon.aac8352bb8759c24108992ec72d20d07.svg",
     "index.html": "/to-do-list-app/index.html",
     "main.43d48545.css.map": "/to-do-list-app/static/css/main.43d48545.css.map",
-    "main.6899cab8.js.map": "/to-do-list-app/static/js/main.6899cab8.js.map"
+    "main.8e517bdb.js.map": "/to-do-list-app/static/js/main.8e517bdb.js.map"
   },
   "entrypoints": [
     "static/css/main.43d48545.css",
-    "static/js/main.6899cab8.js"
+    "static/js/main.8e517bdb.js"
   ]
 }
