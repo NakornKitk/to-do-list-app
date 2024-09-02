@@ -48,8 +48,8 @@ function TaskList() {
     <div>
       <form className="mb-4">
         <div className=" d-flex justify-content-end">
-          <select onChange={handleOnChangeSort}>
-            <option value="" selected="selected">
+          <select onChange={handleOnChangeSort} defaultValue={sortTerm}>
+            <option value="">
               Name
             </option>
             <option value="Piority: High to Low">Piority: Highest</option>
